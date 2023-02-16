@@ -77,18 +77,23 @@ class SnowflakeConnection:
         """
         Get private key from the right location
         """
-        if self.connection_config.get('private_key_path'):
+        if self.connection_config.get('private_key'):
             try:
                 encoded_passphrase = self.connection_config['private_key_passphrase'].encode()
             except KeyError:
                 encoded_passphrase = None
 
-            with open(self.connection_config['private_key_path'], 'rb') as key:
-                p_key= serialization.load_pem_private_key(
-                        key.read(),
-                        password=encoded_passphrase,
-                        backend=default_backend()
-                    )
+            # with open(self.connection_config['private_key_path'], 'rb') as key:
+            #     p_key= serialization.load_pem_private_key(
+            #             key.read(),
+            #             password=encoded_passphrase,
+            #             backend=default_backend()
+            #         )
+
+            key = self.connection_config['private_key']
+            p_key = serialization.load_pem_private_key(
+                bytes(key, "utf-8"), password=encoded_passphrase, backend=default_backend()
+            )
 
             pkb = p_key.private_bytes(
                     encoding=serialization.Encoding.DER,

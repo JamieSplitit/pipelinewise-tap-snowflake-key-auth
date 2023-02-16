@@ -13,7 +13,7 @@ This is a [PipelineWise](https://transferwise.github.io/pipelinewise) compatible
   - namespace: tap-snowflake-key-auth
   - pip_url: git+https://github.com/JamieSplitit/pipelinewise-tap-snowflake-key-auth.git
   - executable name: tap-snowflake-key-auth
-  - settings: `account,dbname,user,parrword,warehouse,role,tables,snowflake_private_key,snowflake_private_key_passphrase,insecure_mode`
+  - settings: `account,dbname,user,parrword,warehouse,role,tables,private_key,private_key_passphrase,insecure_mode`
 
 ## How to use it
 
