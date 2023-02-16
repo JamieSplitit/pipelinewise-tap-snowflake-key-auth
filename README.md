@@ -8,6 +8,13 @@
 
 This is a [PipelineWise](https://transferwise.github.io/pipelinewise) compatible tap connector.
 
+## Custom setup
+- install with `meltano add --custom extractor tap-snowflake-key-auth`
+  - namespace: tap-snowflake-key-auth
+  - pip_url: git+https://github.com/JamieSplitit/pipelinewise-tap-snowflake-key-auth.git
+  - executable name: tap-snowflake-key-auth
+  - settings: `account,dbname,user,parrword,warehouse,role,tables,private_key,private_key_passphrase,insecure_mode`
+
 ## How to use it
 
 The recommended method of running this tap is to use it from [PipelineWise](https://transferwise.github.io/pipelinewise). When running it from PipelineWise you don't need to configure this tap with JSON files and most of things are automated. Please check the related documentation at [Tap Snowflake](https://transferwise.github.io/pipelinewise/connectors/taps/snowflake.html)
