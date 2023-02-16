@@ -9,7 +9,7 @@
 This is a [PipelineWise](https://transferwise.github.io/pipelinewise) compatible tap connector.
 
 ## Custom setup
-- install with `meltano add --custom loader tap-snowflake-key-auth`
+- install with `meltano add --custom extractor tap-snowflake-key-auth`
   - namespace: tap-snowflake-key-auth
   - pip_url: git+https://github.com/JamieSplitit/pipelinewise-tap-snowflake-key-auth.git
   - executable name: tap-snowflake-key-auth
