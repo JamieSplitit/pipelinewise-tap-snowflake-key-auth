@@ -49,7 +49,7 @@ def validate_config(config):
 
     possible_authentication_keys =  [
       'password',
-      'private_key_path'
+      'private_key'
     ]
     if not any(config.get(k, None) for k in possible_authentication_keys):
         errors.append(
